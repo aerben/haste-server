@@ -2,6 +2,10 @@
 
 ///// represents a single document
 
+var langs = hljs.listLanguages().filter(function(l){return l !== 'java';});
+langs.unshift("java");
+hljs.configure({languages: langs});
+
 var haste_document = function() {
   this.locked = false;
 };
