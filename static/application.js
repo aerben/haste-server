@@ -268,9 +268,9 @@ haste.prototype.configureButtons = function() {
     {
       $where: $('#box2 .save'),
       label: 'Save',
-      shortcutDescription: 'control + s',
+      shortcutDescription: 'control/cmd + s',
       shortcut: function(evt) {
-        return evt.ctrlKey && (evt.keyCode === 83);
+          return (evt.ctrlKey || evt.metaKey) && evt.keyCode === 83;
       },
       action: function() {
         if (_this.$textarea.val().replace(/^\s+|\s+$/g, '') !== '') {
@@ -282,7 +282,7 @@ haste.prototype.configureButtons = function() {
       $where: $('#box2 .new'),
       label: 'New',
       shortcut: function(evt) {
-        return evt.ctrlKey && evt.keyCode === 78;
+          return (evt.ctrlKey || evt.metaKey) && evt.keyCode === 78;
       },
       shortcutDescription: 'control + n',
       action: function() {
